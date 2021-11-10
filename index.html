@@ -6,9 +6,9 @@
 		<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 		<script src="firebase.js"></script>
 		<script>
-			function cadastrar(campo, valor, campo2, valor2, campo3, valor3){
-				var db = firebase.firestore();
-
+			function cadastrar(){
+				var db = firebase.firestore(); 
+				
 				db.collection("agendamentos").add({
     				nome: valor,
     				endereco: valor2,
@@ -22,9 +22,9 @@
 				});
 			}
 
-			function editar(valor, valorAtual, valorAtual1, valorAtual2){
+			function editar(valor, valor1, valor2, valor3, valorAtual, valorAtual1, valorAtual2){
 				var db = firebase.firestore();
-        		var ag = db.collection("agendamentos").where("nome", "==", valor);
+        		var ag = db.collection("agendamentos").where("nome", "==", valor; "endereco", "==", valor2; "bairro", "==", valor3);
 
 		        ag.get()
 		        .then((querySnapshot) => {
